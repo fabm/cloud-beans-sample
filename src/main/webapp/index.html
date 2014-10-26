@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud beans</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/social-buttons.css" rel="stylesheet">
+    <link href="/style/growl.css" rel="stylesheet" type="text/css"/>
+
+
+    <script src="https://apis.google.com/js/client:platform.js"></script>
+    <script src="https://code.angularjs.org/1.2.9/angular.js"></script>
+    <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+
+
+    <!-- framwork-->
+    <script src="js/locale.js"></script>
+    <script src="js/growl.js"></script>
+    <script src="ts/lib.js"></script>
+    <script src="ts/validator.js"></script>
+    <script src="ts/langs.js"></script>
+    <script src="ts/api.js"></script>
+    <script src="ts/gapis.js"></script>
+    <!--application scripts-->
+    <script src="ts/services.js"></script>
+    <script src="ts/app.js"></script>
+    <script src="ts/gapiCBS.js"></script>
+
+
+</head>
+<body ng-app="cbs">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Cloud Beans Samples</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="navbar-form navbar-right" role="form" ng-controller="AuthButtonCtrl">
+                <a class="btn btn-google-plus" ng-click="authaction()"><i class="fa fa-google-plus"></i> | {{authvar}}</a>
+            </div>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Cloud Beans test page</h1>
+
+        <p>This page, has as goal presenting samples of Cloud Beans library</p>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div id="content">
+        <div ui-view>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <footer>
+        <p>made by Francisco Monteiro</p>
+    </footer>
+</div>
+
+</body>
+</html>

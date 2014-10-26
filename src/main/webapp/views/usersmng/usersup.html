@@ -1,0 +1,32 @@
+<h2>Gestão de utilizadores</h2>
+<h3 ng-if="create">Criar roles para novo utilizador</h3>
+<h3 ng-if="!create">Atualizar roles do utilizador {{user.email}}</h3>
+
+<div class="row">
+
+    <div class="col-lg-6" ng-if="template.url == null">
+
+
+        <div ng-if="create">
+            <span class="label">Email</span>
+            <input type="text" ng-model="user.email" class="form-control" style="margin-bottom: 20px">
+            <div class="alert alert-danger" ng-if="errors.email" role="alert">{{errors.email}}</div>
+        </div>
+
+
+        <div class="checkbox" ng-repeat="role in user.roles">
+            <label>
+                <input type="checkbox" ng-model="role.role"> {{role.alias}}
+            </label>
+        </div>
+        <div class="alert alert-danger" ng-if="errors.roles" role="alert">{{errors.roles}}</div>
+
+        <button type="button" class="btn btn-primary" ng-click="save()">
+            <span class="glyphicon glyphicon-ok">{{buttonLabel()}}</span>
+        </button>
+        <button type="button" class="btn btn-warning" ng-click="back()">
+            <span class="glyphicon glyphicon-remove">cancelar</span>
+        </button>
+    </div>
+    <div ng-include="template.url"></div>
+</div>

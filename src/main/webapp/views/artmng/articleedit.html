@@ -1,0 +1,33 @@
+<h2 ng-if="create">Criação de um novo artigo</h2>
+<h2 ng-if="!create">Edição do artigo</h2>
+
+<div>
+    <div>
+        <span class="label" style="width: 100px;">Titulo</span>
+        <input type="text" ng-model="article.title"/>
+    </div>
+    <div>
+        <span class="label" style="width: 100px;">Conteúdo</span>
+        <textarea ng-model="article.body" style="vertical-align: middle;"></textarea>
+    </div>
+    <div>
+        <span class="label" style="width: 100px;">Resumo</span>
+        <input type="text" ng-model="article.summary"/>
+    </div>
+    <div>
+        <span class="label" style="width: 100px;">Publico</span>
+        <input type="checkbox" ng-model="article.isPublic"/>
+    </div>
+
+    <div class="fileUpload" style="height:40px;">
+        <span style="position: absolute;width: 90px;height: 40px;text-align: right ;left: 0px;top: 0px">Upload</span>
+        <span style="position: absolute;width: 100px;height: 40px;text-align: center;left: 100px;top: 0px; width:80px;
+         cursor:pointer;">Clique para carregar foto</span>
+        <input type="file" class="upload" file-model="upFile" style="cursor:pointer"/>
+        <span style="position: absolute;width: 100px;height: 40px;text-align: center;left: 200px;top: 0px; width:80px;
+         cursor:pointer;">{{upFileName}}</span>
+    </div>
+
+    <button ng-click="save()" style="margin-left:340px;min-width:100px;text-align:center;">{{buttonLabel()}}</button>
+    <button ng-click="cancel()">Cancelar</button>
+</div>

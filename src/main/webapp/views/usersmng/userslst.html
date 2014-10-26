@@ -1,0 +1,21 @@
+<div ng-if="loading.show">{{loadingMessage}}</div>
+<div ng-if="users.show" style="margin-bottom: 20px">
+    <h2>Lista de utilizadores registados</h2>
+
+    <div ng-if="(users.list.length == 0)">
+        Sem utilizadores
+    </div>
+
+    <ul class="list-group" style="width: 400px">
+        <li ng-repeat="user in users.list" class="list-group-item">
+            <a ng-href="#/users/edit/{{user}}" class="badge">editar</a>
+            {{user}}
+        </li>
+    </ul>
+
+    <a class="btn btn-primary" ng-href="#/users/edit/">
+        <span class="glyphicon glyphicon-plus-sign">novo utilizador</span>
+    </a>
+</div>
+
+<div ng-include="template.url"></div>

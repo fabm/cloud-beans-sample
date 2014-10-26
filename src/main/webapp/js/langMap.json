@@ -1,0 +1,16 @@
+{
+    "user": {
+        "update": {
+            "roles": {
+                "roles": {
+                    "pt": "roles",
+                    "en": "roles"
+                },
+                "email":{
+                    "pt":"email",
+                    "en":"email"
+                }
+            }
+        }
+    }
+}

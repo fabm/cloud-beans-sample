@@ -1,0 +1,26 @@
+<h2>Lista de artigos</h2>
+
+<div ng-if="(articles.length == 0)">
+    Sem artigos publicados
+</div>
+<div ng-if="loading">{{loading}}</div>
+<div ng-if="(articles.length > 0)">
+
+    <div ng-repeat="article in articles">
+        <h2>{{article.title}}</h2>
+
+        <div>{{article.body}}</div>
+        <div style="text-align: center">
+            <img ng-if="article.photoKey" ng-srcset="/photo/{{article.photoKey}}">
+        </div>
+        <div>
+            <a ng-href="#/users/edit/{{article.id}}">editar</a>
+        </div>
+    </div>
+</div>
+<a ng-if="hasHTRole" ng-href="#/users/edit/">Criar artigo</a>
+
+
+<div ng-if="error" class="erro">
+    {{error}}
+</div>
